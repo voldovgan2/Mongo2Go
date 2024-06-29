@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Authors>Johannes Hoppe and many contributors</Authors>
+    <Description>Mongo2Go</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Restoring">
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="$(ContinuousIntegrationBuild) == 'true'">true</RestoreLockedMode>
+  </PropertyGroup>
+
+  <PropertyGroup Label="SourceLink">
+    <DebugType>embedded</DebugType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Label="MinVer">
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="packages.lock.json" Visible="false" />
+    <None Include="../mongo2go_200_200.png" Visible="false">
+      <Pack>true</Pack>
+      <PackagePath>icon.png</PackagePath>
+    </None>
+    <None Include="../../tools/mongodb*/**" Visible="false">
+      <Pack>true</Pack>
+      <PackagePath>tools</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FitnessApp.MongoDB.Driver" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
+    <PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Mongo2GoTests" />
+  </ItemGroup>
+
+  <Target Name="PrintPackageVersionForGitHubActions" AfterTargets="Pack">
+    <Message Importance="high" Text="::set-output name=version::$(PackageVersion)" />
+    <Message Importance="high" Text="::set-output name=nupkg-filename::$(PackageId).$(PackageVersion).nupkg" />
+  </Target>
+
+</Project>

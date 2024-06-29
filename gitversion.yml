@@ -6,6 +6,6 @@ branches:
   # hotfix:
     # tag: fix-{BranchName}-alpha
   master:
-    tag: '' 
+    tag: 'svTest' 
 ignore:
   sha: []

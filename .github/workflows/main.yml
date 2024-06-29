@@ -1,4 +1,4 @@
-name: Publish FitnessApp.MongoDb.Driver
+name: Publish FitnessApp.Mongo2Go
 
 on:
   push:
@@ -49,10 +49,10 @@ jobs:
       run: dotnet restore
       
     - name: Build project 
-      run: dotnet build FitnessApp.Mongo2Go.Driver.sln -c Release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} /p:AssemblyVersion=${{ steps.gitversion.outputs.AssemblySemVer }} /p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }} --no-restore
+      run: dotnet build FitnessApp.Mongo2Go.sln -c Release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} /p:AssemblyVersion=${{ steps.gitversion.outputs.AssemblySemVer }} /p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }} --no-restore
       
     - name: Pack package
-      run: dotnet pack FitnessApp.Mongo2Go.Driver/FitnessApp.Mongo2Go.Driver.csproj -o:package /p:PackageVersion='${{ steps.gitversion.outputs.SemVer }}' -c Release
+      run: dotnet pack FitnessApp.Mongo2Go/FitnessApp.Mongo2Go.csproj -o:package /p:PackageVersion='${{ steps.gitversion.outputs.SemVer }}' -c Release
            
     - name: Push generated package to GitHub registry
       run: dotnet nuget push ./package/*.nupkg --source https://nuget.pkg.github.com/voldovgan2/index.json --api-key ${{ secrets.NUGET_PACKAGE_TOKEN }}

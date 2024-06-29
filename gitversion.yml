@@ -1,10 +1,10 @@
 mode: Mainline 
 next-version: 1.0.0 
 branches:
-  feature:
-    tag: feature-{BranchName}-alpha
-  hotfix:
-    tag: fix-{BranchName}-alpha
+  # feature:
+    # tag: feature-{BranchName}-alpha
+  # hotfix:
+    # tag: fix-{BranchName}-alpha
   master:
     tag: '' 
 ignore:

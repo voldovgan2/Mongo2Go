@@ -22,7 +22,7 @@
         PackagePath="tools/"
         PackageCopyToOutput="true"
     />
-  </ItemGroup>
+  </ItemGroup> 
 
   <ItemGroup>
     <Folder Include="tools\" />

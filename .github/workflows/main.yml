@@ -41,6 +41,13 @@ jobs:
       with:
         dotnet-version: 8.0.x
         
+    - name: Download tools
+      run: |
+          cd MongoDownloader
+          mkdir tools
+          dotnet run
+          mv tools/ ../FitnessApp.Mongo2Go/tools
+        
     - name: Prepare package
       run: dotnet nuget add source --username voldovgan2 --password ${{ secrets.NUGET_PACKAGE_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/voldovgan2/index.json"
     
@@ -49,14 +56,7 @@ jobs:
       
     - name: Build project 
       run: dotnet build FitnessApp.Mongo2Go.sln -c Release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} /p:AssemblyVersion=${{ steps.gitversion.outputs.AssemblySemVer }} /p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }} --no-restore
-    
-    - name: Download tools
-      run: |
-          cd MongoDownloader
-          mkdir tools
-          dotnet run
-          mv tools/ ../FitnessApp.Mongo2Go/bin/release
-    
+            
     - name: Pack package
       run: dotnet pack FitnessApp.Mongo2Go/FitnessApp.Mongo2Go.csproj -o:package /p:PackageVersion='${{ steps.gitversion.outputs.SemVer }}' -c Release
            

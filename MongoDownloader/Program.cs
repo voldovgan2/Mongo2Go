@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Spectre.Console;
 
-namespace MongoDownloader;
+namespace MongoDownloader; 
 
 internal static class Program
 {

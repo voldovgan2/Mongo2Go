@@ -16,10 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="tools">
-      <Pack>true</Pack>
-      <PackagePath>tools</PackagePath>
-    </None>
+    <Content
+        Include="tools/**"
+        Pack="true"
+        PackagePath="tools/"
+        PackageCopyToOutput="true"
+    />
   </ItemGroup>
 
   <ItemGroup>

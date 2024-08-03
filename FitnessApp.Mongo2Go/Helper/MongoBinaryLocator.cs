@@ -9,7 +9,7 @@ namespace Mongo2Go.Helper
 
     public class MongoBinaryLocator : IMongoBinaryLocator
     {
-        private readonly string _nugetPrefix = Path.Combine("packages", "Mongo2Go*");
+        private readonly string _nugetPrefix = Path.Combine("packages", "FitnessApp.Mongo2Go*");
         private readonly string _nugetCachePrefix = Path.Combine("packages", "mongo2go", "*");
         private readonly string _nugetCacheBasePrefix = Path.Combine("mongo2go", "*");
         public const string DefaultWindowsSearchPattern = @"tools\mongodb-windows*\bin";

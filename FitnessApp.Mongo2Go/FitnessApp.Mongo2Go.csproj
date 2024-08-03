@@ -21,5 +21,9 @@
       <PackagePath>tools</PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="tools\" />
+  </ItemGroup>
   
 </Project>

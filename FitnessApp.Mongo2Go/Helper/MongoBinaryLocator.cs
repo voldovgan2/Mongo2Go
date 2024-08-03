@@ -9,14 +9,16 @@ namespace Mongo2Go.Helper
 
     public class MongoBinaryLocator : IMongoBinaryLocator
     {
-        private readonly string _nugetPrefix = Path.Combine("packages", "FitnessApp.Mongo2Go*");
-        private readonly string _nugetCachePrefix = Path.Combine("packages", "mongo2go", "*");
-        private readonly string _nugetCacheBasePrefix = Path.Combine("mongo2go", "*");
+        private const string _packageNameCaseInSensitive = "fitnessapp.mongo2go";
+        private const string _packageNameCaseSensitive = "FitnessApp.Mongo2Go";
+        private readonly string _nugetPrefix = Path.Combine("packages", $"{_packageNameCaseSensitive}*");
+        private readonly string _nugetCachePrefix = Path.Combine("packages", _packageNameCaseInSensitive, "*");
+        private readonly string _nugetCacheBasePrefix = Path.Combine(_packageNameCaseInSensitive, "*");
         public const string DefaultWindowsSearchPattern = @"tools\mongodb-windows*\bin";
         public const string DefaultLinuxSearchPattern = "*/tools/mongodb-linux*/bin";
         public const string DefaultOsxSearchPattern = "tools/mongodb-macos*/bin";
         public const string WindowsNugetCacheLocation = @"%USERPROFILE%\.nuget\packages";
-        public static readonly string OsxAndLinuxNugetCacheLocation = Environment.GetEnvironmentVariable("HOME") + "/.nuget/packages/mongo2go";
+        public static readonly string OsxAndLinuxNugetCacheLocation = Environment.GetEnvironmentVariable("HOME") + $"/.nuget/packages/{_packageNameCaseInSensitive}";
         private string _binFolder = string.Empty;
         private readonly string _searchPattern;
         private readonly string _nugetCacheDirectory;

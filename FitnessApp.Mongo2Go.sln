@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessApp.Mongo2Go", "FitnessApp.Mongo2Go\FitnessApp.Mongo2Go.csproj", "{D2767FB8-7D34-4936-988B-1800B333805B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2FC807FC-6ADD-4849-9B31-7CA7378275E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDownloader", "MongoDownloader\MongoDownloader.csproj", "{7B07E56C-7314-450A-BEDA-80E8E3F004E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D2767FB8-7D34-4936-988B-1800B333805B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2767FB8-7D34-4936-988B-1800B333805B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2767FB8-7D34-4936-988B-1800B333805B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC807FC-6ADD-4849-9B31-7CA7378275E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC807FC-6ADD-4849-9B31-7CA7378275E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC807FC-6ADD-4849-9B31-7CA7378275E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC807FC-6ADD-4849-9B31-7CA7378275E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B07E56C-7314-450A-BEDA-80E8E3F004E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B07E56C-7314-450A-BEDA-80E8E3F004E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B07E56C-7314-450A-BEDA-80E8E3F004E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B07E56C-7314-450A-BEDA-80E8E3F004E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
